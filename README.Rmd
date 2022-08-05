@@ -1,0 +1,43 @@
+---
+title: dwm
+output: amaryaml::github
+---
+```{r, setup, include = FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE, cache = TRUE)
+```
+
+![](https://dwm.suckless.org/dwm.svg)
+
+My build of dwm with the Nord color scheme, colemak keybindings, and custom patches and configuration
+
+# Patches
+
+```{r, feature}
+feature = c("All windows shown in the bar",
+			"All clients shown in the tag list",
+			"Color fonts (emojis) work",
+			"Native fullscreen keybinding",
+			"Removal of pointless code",
+			"Reorganization of tags",
+			"Proper resizing of windows",
+			"Colors in the status bar",
+			"Window swallowing",
+			"Mouse follows window and monitor change"
+)
+patches = c("[fancybar](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-01-fancybar-6.2.diff)",
+			"[clientindicators](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-clientindicators-6.2.diff)",
+			"[allow-color-font](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-allow-color-font-6.2.diff)",
+			"[fullscreen](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-fullscreen-6.2.diff)",
+			"[nodmenu](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dmw-nodmenu-6.2.diff)",
+			"[reorganizetags](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-reorganizetags-6.2.diff)",
+			"[resizepoint](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-resizepoint-62.diff)",
+			"[status2d](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-status2d-6.2.diff)",
+			"[swallow](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-swallow-6.2.diff)",
+			"[warp](https://github.com/amarakon/dotfiles/tree/master/etc/portage/patches/x11-wm/dwm/dwm-warp-6.2.diff)"
+)
+
+df = data.frame(feature, patches)
+
+kable(df, col.names = c("Feature", "Patch"))
+```
